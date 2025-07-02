@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rotation au scroll</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      margin: 0;
+      height: 200vh; /* page haute pour scroll */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      width: 300px;
+      transition: transform 0.1s linear;
+    }
+  </style>
+</head>
+<body>
+  <img id="rotatingImage" src="https://assets.zyrosite.com/dWxvz52RzySnBDPO/test-chaussure-Y4Lv4JJ8bKsj9OMl.png" alt="Chaussure" />
+  <script>
+    const img = document.getElementById('rotatingImage');
+    window.addEventListener('scroll', () => {
+      const rotation = window.scrollY % 360;
+      img.style.transform = `rotate(${rotation}deg)`;
+    });
+  </script>
+</body>
+</html>
